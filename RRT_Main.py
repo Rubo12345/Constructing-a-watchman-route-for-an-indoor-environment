@@ -51,13 +51,15 @@ if __name__ == "__main__":
 
     points = [(147,130),(228,90),(265,322),(125,265),(147,130)] # Polygon with holes
     map_array = load_map("D:\Educational\A WPI Assignments and Materials\Motion Planning\Project\Results\Colored Polygons\PH_BW1.png",1)
+    points = [(150,100),(300,400)]
+    map_array = load_map("D:\Educational\A WPI Assignments and Materials\Motion Planning\Project\Results\Colored Polygons\GS10.jpeg",1)
     for i in range(len(points)-1):
         start = points[i]
         goal = points[i+1]
         RRT_planner = RRT(map_array, start, goal)
         # RRT_planner.RRT(n_pts=4000)
-        # RRT_planner.RRT_star(n_pts=4000)
-        RRT_planner.informed_RRT_star(n_pts=5000)
+        RRT_planner.RRT_star(n_pts=4000)
+        # RRT_planner.informed_RRT_star(n_pts=5000)
     
     plt.show()
     
