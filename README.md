@@ -91,8 +91,14 @@ path. Some mix of Global and Local planner perhaps.
 
 Sampling Based Methods implementation:
 
+RRT and its Variants:
+
 ![RRTs](https://user-images.githubusercontent.com/79450753/172021332-8275d81d-7d4e-4e96-a733-7378a9bd791f.png)
 
+Probabilistic Roadmap using different sampling methods:
+
 ![Sampling](https://user-images.githubusercontent.com/79450753/172021347-261ea77d-e35a-4bda-8bd7-9dd89aeff7bc.png)
+
+Sampling based methods for polygon with holes:
 
 ![Sampling_PWH](https://user-images.githubusercontent.com/79450753/172021360-bf91856d-b36b-4995-af62-a8b4f1c48b44.png)
