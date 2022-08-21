@@ -339,8 +339,8 @@ def plt_plot(P, Yn):
     End = time.time()
     return plt.show()
 
-# print(Guards(Final_Diagonals))
-# plt_plot(P, Yn)
+print(Guards(Final_Diagonals))
+plt_plot(P, Yn)
 
 
 
