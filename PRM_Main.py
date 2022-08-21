@@ -31,17 +31,19 @@ def load_map(file_path, resolution_scale):
 if __name__ == "__main__":
     # Search with PRM
     points = [(147,130),(228,90),(265,322),(125,265),(147,130)] # Polygon with holes
+    points = [(150,100),(300,400)]
     print(points)
     for i in range(len(points)-1):
         start = points[i]
         goal = points[i+1]
-        map_array = load_map("D:\Educational\A WPI Assignments and Materials\Motion Planning\Project\Results\Colored Polygons\PH_BW1.png",1)
+        # map_array = load_map("D:\Educational\A WPI Assignments and Materials\Motion Planning\Project\Results\Colored Polygons\PH_BW1.png",1)
+        map_array = load_map("D:\Educational\A WPI Assignments and Materials\Motion Planning\Project\Results\Colored Polygons\GS10.jpeg",1)
         PRM_planner = PRM(map_array)
-        PRM_planner.sample(n_pts=1000, sampling_method="uniform")
-        PRM_planner.search(start, goal)
+        # PRM_planner.sample(n_pts=1000, sampling_method="uniform")
+        # PRM_planner.search(start, goal)
         # PRM_planner.sample(n_pts=1000, sampling_method="random")
         # PRM_planner.search(start, goal)
-        # PRM_planner.sample(n_pts=5000, sampling_method="gaussian")
+        # PRM_planner.sample(n_pts=10000, sampling_method="gaussian")
         # PRM_planner.search(start, goal)
         # PRM_planner.sample(n_pts=20000, sampling_method="bridge")
         # PRM_planner.search(start, goal)

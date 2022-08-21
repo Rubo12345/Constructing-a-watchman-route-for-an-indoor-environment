@@ -308,9 +308,9 @@ class RRT:
 
         # Draw Trees or Sample points
         plt.figure(1)
-        # for node in self.vertices[1:-1]:
-        #     plt.plot(node.col, node.row, markersize=1, marker='o', color='y')
-        #     plt.plot([node.col, node.parent.col], [node.row, node.parent.row], color='y', linewidth=1)
+        for node in self.vertices[1:-1]:
+            plt.plot(node.col, node.row, markersize=1.5, marker='o', color='y')
+            plt.plot([node.col, node.parent.col], [node.row, node.parent.row], color='y', linewidth=1.5)
         
         # Draw Final Path if found
         if self.found:

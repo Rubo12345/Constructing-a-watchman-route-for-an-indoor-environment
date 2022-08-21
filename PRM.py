@@ -179,7 +179,7 @@ class PRM:
         
         plt.figure(1)
         # draw constructed graph
-        # nx.draw(self.graph, pos, node_size=3, node_color='y', edge_color='y' ,ax=ax)
+        nx.draw(self.graph, pos, node_size=3, node_color='y', edge_color='y' ,ax=ax)
 
         # If found a path
         if self.path:
