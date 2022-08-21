@@ -4,7 +4,7 @@
 ### Shreyas Kanjalkar, [Rutwik Bonde](https://github.com/Rubo12345)
 
 ## Dependencies
-Before you run the code, to make sure you have all the requirements met do:
+Before you run the code, make sure you have all the requirements met:
 
 ```pip install -r requirements.txt```
 
@@ -13,7 +13,7 @@ To run this project, you will need to clone this repository in your local projec
 ``` git clone https://github.com/Rubo12345/Constructing-a-watchman-route-for-an-indoor-environment.git```
 
 More details about running the code are given below
- 
+
 ## Problem Statement: 
 Try to find the Watchman Route, when the area of map is given, by using the optimal positions of static guards.
 
