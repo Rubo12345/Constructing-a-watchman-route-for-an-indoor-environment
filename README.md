@@ -81,7 +81,7 @@ This will print the path length for each Algorithm and the time it took for that
   ![TSP_Path](https://user-images.githubusercontent.com/79450753/166120028-24daafd8-d80e-4687-9a23-b80037624b10.png)
 
   TSP for polygon with holes:
-  ![HOLES_TSP_PATH](img\TSP for polygon with holes.png)
+  ![HOLES_TSP_PATH](https://github.com/Rubo12345/Constructing-a-watchman-route-for-an-indoor-environment/blob/main/img/TSP%20for%20polygon%20with%20holes.png)
 
 Even though we say the route is "Optimal", it is optimal only in the contrained discretized grid. If we keep on discretizing
 the grid even finer, we will get a better result but we can never escape the curse of discretization. Perhaps, one better
