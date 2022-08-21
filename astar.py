@@ -2,7 +2,7 @@ from node import Node
 from environment import *
 
 
-def astar(grid, start, goal):
+def astar(grid, start, goal, poly):
     '''
 
     Args:
@@ -47,7 +47,7 @@ def astar(grid, start, goal):
             path.reverse()
             break
 
-        neighbor_locations = travel(current_node, grid, seen)
+        neighbor_locations = travel(current_node, grid, seen, poly)
         for neighbor in neighbor_locations:
             # check f value
             if node[neighbor[0]][neighbor[1]].cost is None or \

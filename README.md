@@ -31,6 +31,7 @@ Art Gallery Problem is a problem to determine the minimum number of scan locatio
   5) Continue step 3 and 4 until all th edges are scans
   
   The figure below gives an idea of how the algorithm works:
+  
   ![Proposed Algorithm Flow](https://user-images.githubusercontent.com/79450753/166077173-88e61091-e632-4abb-84a0-ed738710028f.png)
 
 Run the following python code to get the solution for Art Gallery Problem:
@@ -42,7 +43,15 @@ Run the following python code to get the solution for Art Gallery Problem:
   `Final_Voronoi_New_and_Short.py`
   
   (The detailed instructions for the above codes are given in code itself)
-  
+ 
+AGP for polygon with holes
+
+`Shrink_Polygon_AGP_With_Holes.py`
+
+![Polygon_with_Holes](https://user-images.githubusercontent.com/79450753/166182110-bc99b7c7-0f69-4a1e-964e-d50f7978eab5.png)
+
+More details on AGP: [Art Gallery Problem](https://github.com/Rubo12345/Computational-Geometry-Research-on-the-Art-Gallery-Problem-AGP)
+
 ### Travelling Salesman Problem - Watchman Route:
 Watchman Route is considered a Travelling Salesman Problem, which is defined as Given a list of cities and the distances
 between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the 
@@ -58,23 +67,38 @@ tried to implement:
 2. Held-Karp Algorithm
 3. Genetic Algorithm
 
-`python search.py`
+To run the code, please type in 
+
+`python search.py --holes`
+
+to run the code without holes and
+
+`python serach.py --no-holes`
 
 This will print the path length for each Algorithm and the time it took for that algorithm, and the order of traversal.
 
   The figure below gives an idea of how the TSP works:
   ![TSP_Path](https://user-images.githubusercontent.com/79450753/166120028-24daafd8-d80e-4687-9a23-b80037624b10.png)
 
-Referral Papers:
-1. https://math.mit.edu/~apost/courses/18.204_2018/Nicole_Chesnokov_paper.pdf
-2. https://members.loria.fr/HEverett/McGill-ISA/Bellairs-2005/rafa.pdf
-3. https://arxiv.org/pdf/1708.01461.pdf
-4. https://arxiv.org/pdf/1611.05092.pdf
-5. https://arxiv.org/pdf/1612.03246.pdf
-6. https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.105.1879&rep=rep1&type=pdf
-7. http://www.ams.sunysb.edu/~jsbm/papers/watchman.pdf
-8. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6320878
-9. https://link.springer.com/content/pdf/10.1007/BF02574671.pdf (WRP)
-10. https://link.springer.com/content/pdf/10.1007/PL00009467.pdf (WRP)
-11. https://en.wikipedia.org/wiki/Travelling_salesman_problem
-12. https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm
+  TSP for polygon with holes:
+  ![HOLES_TSP_PATH](https://github.com/zen1405/Watchman-Route-Optimal/blob/main/Polygon%20with%20holes%20example.PNG)
+
+Even though we say the route is "Optimal", it is optimal only in the contrained discretized grid. If we keep on discretizing
+the grid even finer, we will get a better result but we can never escape the curse of discretization. Perhaps, one better
+approach could be to try to directly connect the scan locations in a straight line and when we encounter an obstacle, in 
+this case would  be the polygon boundary or holes within the polygon, we can switch to A* or Dijkstra algorithm to find the
+path. Some mix of Global and Local planner perhaps.
+
+Sampling Based Methods implementation:
+
+RRT and its Variants:
+
+![RRTs](https://user-images.githubusercontent.com/79450753/172021332-8275d81d-7d4e-4e96-a733-7378a9bd791f.png)
+
+Probabilistic Roadmap using different sampling methods:
+
+![Sampling](https://user-images.githubusercontent.com/79450753/172021347-261ea77d-e35a-4bda-8bd7-9dd89aeff7bc.png)
+
+Sampling based methods for polygon with holes:
+
+![Sampling_PWH](https://user-images.githubusercontent.com/79450753/172021360-bf91856d-b36b-4995-af62-a8b4f1c48b44.png)

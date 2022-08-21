@@ -47,7 +47,7 @@ def search(grid, start, goal, poly):
             path.reverse()
             break
 
-        neighbor_locations = travel(current_node, grid, seen)
+        neighbor_locations = travel(current_node, grid, seen, poly)
         for neighbor in neighbor_locations:
 
             # relax condition

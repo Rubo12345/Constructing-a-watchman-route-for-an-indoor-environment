@@ -1,5 +1,6 @@
 import math
 from shapely.geometry import Point
+import copy
 
 def grid(limx, limy, polygon):
     '''
@@ -13,6 +14,11 @@ def grid(limx, limy, polygon):
 
     '''
     grid = []
+    if limx > limy:
+        limy = limx
+    else:
+        limx = limy # sometimes dimension error, debug later, only changes the grid to square
+
     for i in range(0, limx+1):
         row = []
         for j in range(0, limy+1):
@@ -42,8 +48,17 @@ def valid(x, y, grid, visited):
             return True
     return False
 
+def collision_check(p1, p2, polygon):
+    n = 10  # number of segments
+    p = copy.deepcopy(p1)
+    for i in range(n):
+        p[0] = p[0] + (p2[0] - p1[0]) / n
+        p[1] = p[1] + (p2[1] - p1[1]) / n
+        if not polygon.contains(Point(p[0], p[1])):
+            return False
+    return True
 
-def travel(node, grid, visited):
+def travel(node, grid, visited, polygon):
     '''
 
     Args:
@@ -56,28 +71,28 @@ def travel(node, grid, visited):
     '''
 
     possible_travel = []
-    if valid(node.x, node.y+1, grid, visited):
+    if valid(node.x, node.y+1, grid, visited) and collision_check([node.x, node.y], [node.x, node.y+1], polygon):
         possible_travel.append([node.x, node.y+1])
 
-    if valid(node.x+1, node.y, grid, visited):
+    if valid(node.x+1, node.y, grid, visited) and collision_check([node.x, node.y], [node.x+1, node.y], polygon):
         possible_travel.append([node.x+1, node.y])
 
-    if valid(node.x, node.y-1, grid, visited):
+    if valid(node.x, node.y-1, grid, visited) and collision_check([node.x, node.y], [node.x, node.y-1], polygon):
         possible_travel.append([node.x, node.y-1])
 
-    if valid(node.x-1, node.y, grid, visited):
+    if valid(node.x-1, node.y, grid, visited) and collision_check([node.x, node.y], [node.x-1, node.y], polygon):
         possible_travel.append([node.x-1, node.y])
 
-    if valid(node.x-1, node.y-1, grid, visited):
+    if valid(node.x-1, node.y-1, grid, visited) and collision_check([node.x, node.y], [node.x-1, node.y-1], polygon):
         possible_travel.append([node.x-1, node.y-1])
 
-    if valid(node.x+1, node.y-1, grid, visited):
+    if valid(node.x+1, node.y-1, grid, visited) and collision_check([node.x, node.y], [node.x+1, node.y-1], polygon):
         possible_travel.append([node.x+1, node.y-1])
 
-    if valid(node.x-1, node.y+1, grid, visited):
+    if valid(node.x-1, node.y+1, grid, visited) and collision_check([node.x, node.y], [node.x-1, node.y+1], polygon):
         possible_travel.append([node.x-1, node.y+1])
 
-    if valid(node.x+1, node.y+1, grid, visited):
+    if valid(node.x+1, node.y+1, grid, visited) and collision_check([node.x, node.y], [node.x+1, node.y+1], polygon):
         possible_travel.append([node.x+1, node.y+1])
     return possible_travel  # returns all possible node locations that you can travel to
 
