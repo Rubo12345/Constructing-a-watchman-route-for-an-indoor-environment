@@ -1,8 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # Custom Folder Ignore
-# /.idea/*
-# /__pycache__/*
+/.idea/*
+/__pycache__/*
 
 # Ingore Filename Extensions
 *.pyc
