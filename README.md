@@ -6,11 +6,16 @@
 ## Dependencies
 Before you run the code, make sure you have all the requirements met:
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 ## Usage Guidelines
 To run this project, you will need to clone this repository in your local project folder using the following command:
-``` git clone https://github.com/Rubo12345/Constructing-a-watchman-route-for-an-indoor-environment.git```
+
+``` 
+git clone https://github.com/Rubo12345/Constructing-a-watchman-route-for-an-indoor-environment.git
+```
 
 More details about running the code are given below
 
